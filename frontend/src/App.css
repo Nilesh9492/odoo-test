@@ -1,0 +1,55 @@
+.App {
+  padding: 15px;
+  text-align: center;
+
+}
+.search-btn {
+  margin-left: 15px;
+  background-color: black;
+  color: aliceblue;
+}
+.availability {
+  margin-top: 10px;
+  display: flex;
+  justify-content:space-around ;
+}
+
+.room-list {
+  width: 40%;
+  padding: 10px;
+}
+
+.room-details {
+  width: 70%;
+  padding: 10px;
+}
+
+.room {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.room-heading {
+  display: flex;
+  justify-content: space-around;
+}
+
+.room h3 {
+  margin: 0;
+}
+.calendar-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
