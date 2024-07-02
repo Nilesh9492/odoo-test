@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { SessionEntity } from './session.entity';
+import { BookingEntity } from './booking.entity';
 
 @Entity()
 export class RoomsEntity {
@@ -16,4 +18,10 @@ export class RoomsEntity {
 
   @Column()
   capacity: number;
+
+  @OneToMany(() => SessionEntity, (session) => session.room)
+  sessions: SessionEntity[];
+
+  @OneToMany(() => BookingEntity, (booking) => booking.room)
+  booking: BookingEntity[];
 }
