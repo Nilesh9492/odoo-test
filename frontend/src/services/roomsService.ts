@@ -33,3 +33,14 @@ export const bookRoom = async (roomId: number, bookingDetails: number) => {
     throw error;
   }
 };
+
+export const getSearchRoomsReq = (payload: any) => {
+  console.log("pay", payload);
+  return api({
+    method: "POST",
+    url: `rooms`,
+    data: {
+      ...payload,
+    },
+  });
+};

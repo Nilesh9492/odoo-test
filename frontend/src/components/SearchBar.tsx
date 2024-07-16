@@ -1,7 +1,11 @@
 import { Button, Input, Select } from "antd";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getRoomsList } from "../redux/rooms/actions";
 
 const SearchBar = () => {
+  const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState<string>(" ");
   return (
     <div>
       <Select
@@ -17,28 +21,34 @@ const SearchBar = () => {
         }
         options={[
           {
-            value: "1",
+            value: "All Available",
             label: "All Available",
           },
           {
-            value: "2",
+            value: "Projector",
             label: "Projector",
           },
           {
-            value: "3",
+            value: "Sound",
             label: "Sound",
           },
           {
-            value: "4",
+            value: "Large Screen",
             label: "Large Screen",
           },
           {
-            value: "5",
+            value: "Available after 30 min",
             label: "Available after 30 min",
           },
         ]}
+        onChange={(e: any) => setSearchValue(e.join(" "))}
       />
-      <Button className="search-btn">Search</Button>
+      <Button
+        className="search-btn"
+        onClick={() => dispatch(getRoomsList({ search: searchValue }))}
+      >
+        Search
+      </Button>
     </div>
   );
 };

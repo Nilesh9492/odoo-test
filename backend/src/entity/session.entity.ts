@@ -7,7 +7,7 @@ export class SessionEntity {
   id: number;
 
   @Column()
-  name: string;
+  sessionName: string;
 
   @ManyToOne(() => RoomsEntity, (room) => room.sessions)
   room: RoomsEntity;
